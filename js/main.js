@@ -1,4 +1,5 @@
 console.log('heelo world')
-function init(){
-    console.log('more crap')
+
+if (ENV !== 'production') {
+    console.log('Logging is enabled!');
 }
