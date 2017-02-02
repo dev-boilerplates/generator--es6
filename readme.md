@@ -1,8 +1,8 @@
 #__PROJECTNAME
 
 ### Package Module into CJS Format
-This can now be included in another `rollup` built bundle
-Work on `js/package.js`, and create with..
+This can now be included in another `rollup` built bundle.  
+Work on `es6/package.js`, and create with..
     
     npm run package
 
