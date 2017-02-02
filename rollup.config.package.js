@@ -10,8 +10,8 @@ import { minify } from 'uglify-js'
 export default {
     entry: 'es6/package.js',
     format: 'cjs',
-    dest: 'dist/axoviewer.js',
-    moduleName: 'axo',
+    dest: 'dist/package.js',
+    moduleName: 'module',
     sourceMap: false,
     plugins: [
         Stringify({ include: 'js/templates/*.html' }),
@@ -23,6 +23,6 @@ export default {
             exclude: 'node_modules/**',
             ENV: JSON.stringify(process.env.NODE_ENV || 'development')
         }),
-        (process.env.NODE_ENV === 'production1' && Uglify({}, minify))
+        (process.env.NODE_ENV === 'production' && Uglify({}, minify))
     ]
 }
