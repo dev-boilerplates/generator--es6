@@ -12,7 +12,7 @@ export default {
     format: 'iife',
     dest: 'public/bundle.js',
     moduleName: `${process.env.npm_package_name}-wrapper`,
-    sourceMap: true,
+    sourceMap: (process.env.NODE_ENV === 'development'),
     plugins: [
         Resolve({
             jsnext: true,

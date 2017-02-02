@@ -33,6 +33,7 @@
     "firstrun": "./node_modules/.bin/eslint --init",
     "start": "NODE_ENV=development npm-run-all --parallel server:localhost listen:*",
     "package": "NODE_ENV=production rollup --config rollup.config.package.js",
+    "production": "NODE_ENV=production rollup -c",
     "server:localhost": "live-server ./public --port=3000",
     "listen:js": "onchange 'js/**/*.js' -- npm run compile:bundle",
     "listen:views": "onchange 'jade/views/**/*.jade' -- npm run compile:pages",

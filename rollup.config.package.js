@@ -12,7 +12,7 @@ export default {
     format: 'cjs',
     dest: 'dist/package.js',
     moduleName: process.env.npm_package_name,
-    sourceMap: false,
+    sourceMap: (process.env.NODE_ENV === 'development'),
     plugins: [
         Stringify({ include: 'js/templates/*.html' }),
         Babel({
