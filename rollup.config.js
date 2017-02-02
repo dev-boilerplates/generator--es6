@@ -11,8 +11,8 @@ export default {
     entry: 'js/main.js',
     format: 'iife',
     dest: 'public/bundle.js',
-    moduleName: 'matchSorter',
-    sourceMap: 'inline',
+    moduleName: 'App',
+    sourceMap: true,
     plugins: [
         Resolve({
             jsnext: true,
@@ -24,13 +24,8 @@ export default {
         }),
         Stringify({ include: 'js/templates/*.html' }),
         Babel({
-            exclude: 'node_modules/**',
+            exclude: ['node_modules/**', 'dist/package.js'],
             presets: 'es2015-rollup'
-        }),
-        eslint({
-            exclude: [
-                'src/styles/**',
-            ]
         }),
         replace({
             exclude: 'node_modules/**',
