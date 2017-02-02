@@ -11,7 +11,7 @@ export default {
     entry: 'js/main.js',
     format: 'iife',
     dest: 'public/bundle.js',
-    moduleName: 'App',
+    moduleName: `${process.env.npm_package_name}-wrapper`,
     sourceMap: true,
     plugins: [
         Resolve({

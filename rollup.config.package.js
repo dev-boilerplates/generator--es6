@@ -11,7 +11,7 @@ export default {
     entry: 'es6/package.js',
     format: 'cjs',
     dest: 'dist/package.js',
-    moduleName: 'module',
+    moduleName: process.env.npm_package_name,
     sourceMap: false,
     plugins: [
         Stringify({ include: 'js/templates/*.html' }),
