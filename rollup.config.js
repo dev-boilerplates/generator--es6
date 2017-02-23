@@ -23,9 +23,18 @@ export default {
             // include: 'node_modules/**',
         }),
         Stringify({ include: 'js/templates/*.html' }),
-        Babel({
-            exclude: ['node_modules/**', 'dist/package.js'],
-            presets: 'es2015-rollup'
+        // Babel({
+        //     exclude: ['node_modules/**', 'dist/package.js'],
+        //     presets: 'es2015-rollup'
+        // }),
+        Buble({
+            transforms: {
+                arrow: true,
+                modules: false,
+                dangerousForOf: true
+              },
+            file: 'public/bundle.js',
+            source: 'js/main.js'
         }),
         replace({
             exclude: 'node_modules/**',
