@@ -14,6 +14,7 @@ export default {
     moduleName: `${process.env.npm_package_name}-wrapper`,
     sourceMap: (process.env.NODE_ENV === 'development'),
     plugins: [
+        eslint(),
         Buble({
             transforms: {
                 arrow: true,
