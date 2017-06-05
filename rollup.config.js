@@ -16,10 +16,12 @@ export default {
     plugins: [
         eslint(),
         Buble({
-            transforms: {
+            transforms: {                
+                classes: true,
                 arrow: true,
                 modules: false,
-                dangerousForOf: true
+                dangerousForOf: true,
+                objectAssign: 'Object.assign'
             },
             exclude: "./node_modules",
             file: 'public/bundle.js',
