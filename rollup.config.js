@@ -20,9 +20,9 @@ export default {
                 classes: true,
                 arrow: true,
                 modules: false,
-                dangerousForOf: true,
-                objectAssign: 'Object.assign'
+                dangerousForOf: true                
             },
+            objectAssign: 'Object.assign',
             exclude: "./node_modules",
             file: 'public/bundle.js',
             source: 'js/main.js'
