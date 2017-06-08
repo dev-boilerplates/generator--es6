@@ -28,7 +28,7 @@
     "rollup-plugin-uglify": "^1.0.1",
     "stylus": "latest",
     "uglify-js": "^2.5.0",
-    "purify-css": "^1.2.3",
+    "purify-css": "^1.2.3"
   },
   "scripts": {
     "firstrun": "./node_modules/.bin/eslint --init",
