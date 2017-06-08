@@ -1,6 +1,5 @@
 import Commonjs from 'rollup-plugin-commonjs'
 import Resolve from 'rollup-plugin-node-resolve'
-import Stringify from 'rollup-plugin-string'
 import Buble from 'rollup-plugin-buble'
 import Uglify from 'rollup-plugin-uglify'
 import eslint from 'rollup-plugin-eslint'
@@ -14,7 +13,12 @@ export default {
     moduleName: `${process.env.npm_package_name}-wrapper`,
     sourceMap: (process.env.NODE_ENV === 'development'),
     plugins: [
-        eslint(),
+        Resolve({
+            jsnext: true,
+            main: true
+        }),        
+        html({ include: 'js/templates/*.html' }),
+        json({ include: '_scripts/*.json' }),        
         Buble({
             transforms: {                
                 classes: true,
@@ -27,18 +31,14 @@ export default {
             file: 'public/bundle.js',
             source: 'js/main.js'
         }),
-        Resolve({
-            jsnext: true,
-            main: true
-        }),
         Commonjs({
             include: 'node_modules/**',
         }),
-        Stringify({ include: 'js/templates/*.html' }),
         replace({
-            // exclude: 'node_modules/**',
+            exclude: 'node_modules/**',
             ENV: JSON.stringify(process.env.NODE_ENV || 'development')
         }),
+        eslint(),
         (process.env.NODE_ENV === 'production' && Uglify({}, minify))
     ]
 }
