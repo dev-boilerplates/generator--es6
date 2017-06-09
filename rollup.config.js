@@ -4,6 +4,8 @@ import Buble from 'rollup-plugin-buble'
 import Uglify from 'rollup-plugin-uglify'
 import eslint from 'rollup-plugin-eslint'
 import replace from 'rollup-plugin-replace'
+import html from 'rollup-plugin-html'
+import json from 'rollup-plugin-json'
 import { minify } from 'uglify-js'
 
 export default {
@@ -18,7 +20,7 @@ export default {
             main: true
         }),        
         html({ include: 'js/templates/*.html' }),
-        json({ include: '_scripts/*.json' }),        
+        json({ include: 'js/*.json' }),        
         Buble({
             transforms: {                
                 classes: true,
