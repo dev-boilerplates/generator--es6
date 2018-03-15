@@ -8,12 +8,15 @@ import html from 'rollup-plugin-html'
 import json from 'rollup-plugin-json'
 import { minify } from 'uglify-js'
 
+const format = 'iife'
+const input = 'js/main.js'                                  // input
+const file = 'public/bundle.js'                             // target output
+const name = process.env.npm_package_name.replace("-", "")  // making it namesafe for JS
+const sourcemap = (process.env.NODE_ENV === 'development')
+
 export default {
-    entry: 'js/main.js',
-    format: 'iife',
-    dest: 'public/bundle.js',
-    moduleName: `${process.env.npm_package_name}-wrapper`,
-    sourceMap: (process.env.NODE_ENV === 'development'),
+    input,
+    output: { format, name, file, sourcemap },
     plugins: [
         Resolve({
             jsnext: true,
