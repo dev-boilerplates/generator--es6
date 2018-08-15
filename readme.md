@@ -1,4 +1,4 @@
-#__PROJECTNAME
+# __PROJECTNAME
 
 ### Package Module into CJS Format
 This can now be included in another `rollup` built bundle.  
