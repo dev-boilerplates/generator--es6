@@ -9,9 +9,9 @@ import json from 'rollup-plugin-json'
 import { minify } from 'uglify-js'
 
 const format = 'iife'
-const input = 'js/main.js'                                  // input
-const file = 'public/bundle.js'                             // target output
-const name = process.env.npm_package_name.replace("-", "")  // making it namesafe for JS
+const input = 'js/main.js'                                      // input
+const file = 'public/bundle.js'                                 // target output
+const name = process.env.npm_package_name.split("-").join("")   // making it namesafe for JS
 const sourcemap = (process.env.NODE_ENV === 'development')
 
 export default {
@@ -43,7 +43,7 @@ export default {
             exclude: 'node_modules/**',
             ENV: JSON.stringify(process.env.NODE_ENV || 'development')
         }),
-        eslint(),
+        // eslint(),
         (process.env.NODE_ENV === 'production' && Uglify({}, minify))
     ]
 }
