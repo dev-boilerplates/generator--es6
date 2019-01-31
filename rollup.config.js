@@ -28,7 +28,8 @@ export default {
                 arrow: true,
                 modules: false,
                 dangerousForOf: true
-            }
+            },
+            objectAssign: "Object.assign"                       // required as a spread operator helper
         }),
         Commonjs({ include: 'node_modules/**' }),
         replace({ exclude: 'node_modules/**', ENV: JSON.stringify(process.env.NODE_ENV || 'development') }),        
