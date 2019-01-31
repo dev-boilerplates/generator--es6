@@ -5,13 +5,8 @@
   "devDependencies": {
     "buble": "latest",
     "cpy-cli": "latest",
-    "eslint": "^3.12.2",
-    "eslint-config-standard": "^6.2.1",
-    "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-standard": "^2.0.1",
+    "eslint": "latest",
     "jade": "latest",
-    "jshint": "^2.8.0",
-    "jshint-stylish": "^0.4.0",
     "nib": "latest",
     "npm-run-all": "latest",
     "onchange": "latest",
@@ -27,8 +22,8 @@
     "rollup-plugin-html": "latest",
     "rollup-plugin-json": "latest",
     "stylus": "latest",
-    "uglify-js": "^2.5.0",
-    "purify-css": "^1.2.3",
+    "uglify-js": "latest",
+    "purify-css": "latest",
     "browser-sync": "latest"
   },
   "scripts": {

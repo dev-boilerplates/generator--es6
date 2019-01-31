@@ -1,5 +1,8 @@
-console.log('heelo world')
+import Vue from 'vue/dist/vue'
+import app from './app'
+
+new Vue(...app)
 
 if (ENV !== 'production') {
-    console.log('Logging is enabled!');
+    console.log(`${ENV} specific logging is enabled!`);
 }
