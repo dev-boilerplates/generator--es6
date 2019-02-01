@@ -1,8 +1,7 @@
 {
   "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {}
+    "ecmaVersion": 2018,
+    "sourceType": "module"
   },
   "extends": "eslint:recommended",
   "env": {
