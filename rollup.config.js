@@ -1,12 +1,11 @@
 import Commonjs from 'rollup-plugin-commonjs'
 import Resolve from 'rollup-plugin-node-resolve'
 import Buble from 'rollup-plugin-buble'
-import Uglify from 'rollup-plugin-uglify'
+import { uglify } from 'rollup-plugin-uglify'
 import { eslint } from 'rollup-plugin-eslint'
 import replace from 'rollup-plugin-replace'
 import html from 'rollup-plugin-html'
 import json from 'rollup-plugin-json'
-import { minify } from 'uglify-js'
 import lintrc from './.eslintrc.json'
 
 const format = 'iife'                                           // runtime: browser
@@ -33,7 +32,7 @@ export default {
         }),
         Commonjs({ include: 'node_modules/**' }),
         replace({ exclude: 'node_modules/**', ENV: JSON.stringify(process.env.NODE_ENV || 'development') }),        
-        (process.env.NODE_ENV === 'production' && Uglify({}, minify))
+        (process.env.NODE_ENV === 'production' && uglify()
     ],
     output: { format, name, file, sourcemap }
 }

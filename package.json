@@ -23,7 +23,6 @@
     "rollup-plugin-html": "latest",
     "rollup-plugin-json": "latest",
     "stylus": "latest",
-    "uglify-js": "latest",
     "purify-css": "latest",
     "browser-sync": "latest"
   },
