@@ -1,8 +1,14 @@
 extends ../structure
 
+block meta
+  +meta()
+
 block content
   include ../partials/spa
   //- include ../partials/static
+
+block footer
+  include ../partials/footer
 
 block scripts
   script(src="bundle.js")
