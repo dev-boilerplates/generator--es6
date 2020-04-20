@@ -42,7 +42,7 @@
     "compile:critical": "stylus -compress -u nib stylus/critical.styl -o html/partials/critical.css",
     "build:css": "stylus --compress -u nib stylus/style.styl -o stylus/style.css",
     "postbuild:css": "purifycss stylus/style.css public/*.html --info --out public/style.css",
-    "compile:templates": "pug html/components -o js/templates/",
+    "compile:templates": "pug html/components -o js/components/templates/",
     "compile:pages": "pug html/views -H -o public/"
   },
   "dependencies": {
