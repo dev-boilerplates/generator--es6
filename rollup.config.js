@@ -18,7 +18,7 @@ export default {
     input,    
     plugins: [
         Resolve({ jsnext: true }),        
-        html({ include: 'js/templates/*.html' }),
+        html({ include: 'js/components/templates/*.html' }),
         json({ include: 'js/*.json' }),
         eslint(lintrc),  
         Buble({
